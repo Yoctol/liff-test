@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "lint": "eslint .",
-    "start": "bottender start",
+    "start": "nodemon server.js",
     "test": "jest"
   },
   "dependencies": {
