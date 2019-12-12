@@ -32,15 +32,6 @@ jobs:
           paths:
             - node_modules
             - dist
-  lint:
-    <<: *docker_default
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run:
-          name: run lint
-          command: npm run lint -- --color
   deploy:
     working_directory: /tmp/app
     docker:
@@ -117,16 +108,10 @@ workflows:
           filters:
             tags:
               only: /.*/
-      - lint:
-          requires:
-            - build
-          filters:
-            tags:
-              only: /.*/
       - deploy:
           context: org-global
           requires:
-            - lint
+            - build
           filters:
             tags:
               only: /v[0-9]+(\.[0-9]+)*(-.*)?/
