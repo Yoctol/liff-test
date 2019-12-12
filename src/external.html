@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIFF Test External</title>
+  <style>
+    div{
+      height: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>連續跳轉測試:</h1>
+    <div><a href="/external">a href</a></div>
+    <div><a href="javascript: location.reload();">location.reload()</a></div>
+    <div><a href="javascript: location.href = location.href;">location.href = location.href</a></div>
+  <h1>LIFF 測試連結:</h1>
+  <div><a href="line://app/<%= lineLogin %>?scheme=line&version=v1&registerFrom=lineLogin">line v1 lineLogin</a></div>
+  <div><a href="line://app/<%= messagingApi %>?scheme=line&version=v1&registerFrom=messagingApi">line v1 messagingApi</a></div>
+  <div><a href="line://app/<%= lineLogin %>?scheme=line&version=v2&registerFrom=lineLogin">line v2 lineLogin</a></div>
+  <div><a href="line://app/<%= messagingApi %>?scheme=line&version=v2&registerFrom=messagingApi">line v2 messagingApi</a></div>
+  <div><a href="https://liff.line.me/<%= lineLogin %>/v1?scheme=https&version=v1&registerFrom=lineLogin">https v1 lineLogin</a></div>
+  <div><a href="https://liff.line.me/<%= messagingApi %>/v1?scheme=https&version=v1&registerFrom=messagingApi">https v1 messagingApi</a></div>
+  <div><a href="https://liff.line.me/<%= lineLogin %>/v2?scheme=https&version=v2&registerFrom=lineLogin">https v2 lineLogin</a></div>
+  <div><a href="https://liff.line.me/<%= messagingApi %>/v2?scheme=https&version=v2&registerFrom=messagingApi">https v2 messagingApi</a></div>
+</body>
+
+</html>
