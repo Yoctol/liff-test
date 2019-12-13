@@ -45,7 +45,7 @@ function registerButtonHandlers() {
     .addEventListener('click', function() {
       alert('clicked: openWindow');
       liff.openWindow({
-        url: `${location.origin}/external`,
+        url: `${rootPath}/external`,
         external: false,
       });
     });
@@ -56,7 +56,7 @@ function registerButtonHandlers() {
     .addEventListener('click', function() {
       alert('clicked: openWindowExternal');
       liff.openWindow({
-        url: `${location.origin}/external`,
+        url: `${rootPath}/external`,
         external: true,
       });
     });

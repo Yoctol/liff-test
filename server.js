@@ -57,8 +57,12 @@ app.prepare().then(() => {
     const params = getParams(req);
     const version = params.version || 'v2';
     const filename = path.join(__dirname + `/src/liff/${version}.html`);
+    const data = {
+      params,
+      rootPath: process.env.ROOT_PATH
+    }
     const options = {};
-    ejs.renderFile(filename, { params }, options, function(err, str) {
+    ejs.renderFile(filename, data, options, function(err, str) {
       // str => Rendered HTML string
       res.send(str);
       if (err) {
@@ -71,8 +75,12 @@ app.prepare().then(() => {
     console.log('v1');
     let params = getParams(req);
     const filename = path.join(__dirname + `/src/liff/v1.html`);
+    const data = {
+      params,
+      rootPath: process.env.ROOT_PATH
+    }
     const options = {};
-    ejs.renderFile(filename, { params }, options, function(err, str) {
+    ejs.renderFile(filename, data, options, function(err, str) {
       // str => Rendered HTML string
       res.send(str);
       if (err) {
@@ -84,8 +92,12 @@ app.prepare().then(() => {
   server.get('/v2', (req, res) => {
     let params = getParams(req);
     const filename = path.join(__dirname + `/src/liff/v2.html`);
+    const data = {
+      params,
+      rootPath: process.env.ROOT_PATH
+    }
     const options = {};
-    ejs.renderFile(filename, { params }, options, function(err, str) {
+    ejs.renderFile(filename, data, options, function(err, str) {
       // str => Rendered HTML string
       res.send(str);
       if (err) {
