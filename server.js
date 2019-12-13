@@ -9,7 +9,6 @@ const app = bottender({
   dev: process.env.NODE_ENV !== 'production',
 });
 const port = Number(process.env.PORT) || 5000;
-console.log(`process.env.POST=${process.env.PORT}`)
 
 const handle = app.getRequestHandler();
 
@@ -42,27 +41,18 @@ app.prepare().then(() => {
   });
 
   server.get('/send-id', (req, res) => {
-    console.log('/send-id')
-    console.log('req.query.registerFrom:', req.query.registerFrom)
-    console.log('process.env.LINE_LOGIN_LIFF_ID:', process.env.LINE_LOGIN_LIFF_ID)
-    console.log('process.env.MESSAGING_API_LIFF_ID:', process.env.MESSAGING_API_LIFF_ID)
     if (req.query.registerFrom == 'lineLogin') {
-      console.log('lineLogin')
       res.json({ id: process.env.LINE_LOGIN_LIFF_ID });
       return;
     }
     if (req.query.registerFrom == 'messagingApi') {
-      console.log('messagingApi')
       res.json({ id: process.env.MESSAGING_API_LIFF_ID });
       return;
     }
-    console.log('error')
     res.json({ id: 'error' });
   });
 
   server.get('/liff', (req, res) => {
-    console.log('liff test test 123 123')
-
     const params = getParams(req);
     const version = params.version || 'v2';
     const filename = path.join(__dirname + `/src/liff/${version}.html`);
@@ -81,7 +71,6 @@ app.prepare().then(() => {
   });
 
   server.get('/v1', (req, res) => {
-    console.log('v1');
     let params = getParams(req);
     const filename = path.join(__dirname + `/src/liff/v1.html`);
     const data = {
@@ -132,8 +121,6 @@ app.prepare().then(() => {
   });
 
   server.all('/webhooks/line', (req, res) => {
-    console.log('/webhooks/line');
-
     return handle(req, res);
   });
 
