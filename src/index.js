@@ -37,7 +37,7 @@ function title(scheme, version, registerFrom) {
   };
 }
 
-module.exports = async function App(context) {
+async function App(context) {
   const text = 'LIFF 測試連結：';
   const bubble = {
     type: 'bubble',
@@ -81,3 +81,5 @@ module.exports = async function App(context) {
   };
   await context.sendFlex(text, bubble);
 };
+
+module.exports = App

@@ -1112,10 +1112,10 @@ body-parser@1.19.0, body-parser@^1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
-bottender@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/bottender/-/bottender-1.0.2.tgz#919e33e3c4548395230edfff7c6ec1898779826e"
-  integrity sha512-Nm/CnHvg8UnVSmPy8pUG3PRjf60kiaI6K6pe9uJqOGxVLo3xhEgrmlZ0pgip9/6pIIJcZnhNFNm7RRA8AO01ag==
+bottender@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/bottender/-/bottender-1.0.3.tgz#1ea6dfcf7e86ae2f21ac92b931d8f178adec92d6"
+  integrity sha512-xJ1VWR0YgLS2WkUMIVWeUaRgRCjZluvj+Igrr5OybTL7bcQZ05nM3qC9pH5pFI/c1SvWlT0NS36TjLkcqxzQmg==
   dependencies:
     "@bottender/express" "^1.0.0"
     "@hapi/joi" "^15.1.1"
