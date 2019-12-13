@@ -32,6 +32,9 @@ function initializeLiff() {
  * Initialize the app by calling functions handling individual app components
  */
 function initializeApp() {
+  document.getElementById('console').textContent = `location.href = ${location.href}
+
+params= ${JSON.stringify(params)}`;
   registerButtonHandlers();
 }
 
