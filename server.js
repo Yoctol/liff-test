@@ -61,6 +61,8 @@ app.prepare().then(() => {
   });
 
   server.get('/liff', (req, res) => {
+    console.log('liff test test 123 123')
+
     const params = getParams(req);
     const version = params.version || 'v2';
     const filename = path.join(__dirname + `/src/liff/${version}.html`);
