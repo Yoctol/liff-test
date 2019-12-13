@@ -8,8 +8,8 @@ const querystring = require('querystring');
 const app = bottender({
   dev: process.env.NODE_ENV !== 'production',
 });
-const port = Number(process.env.POST) || 5000;
-console.log(`process.env.POST=${process.env.POST}`)
+const port = Number(process.env.PORT) || 5000;
+console.log(`process.env.POST=${process.env.PORT}`)
 
 const handle = app.getRequestHandler();
 
