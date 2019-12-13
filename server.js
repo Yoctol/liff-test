@@ -42,14 +42,21 @@ app.prepare().then(() => {
   });
 
   server.get('/send-id', (req, res) => {
+    console.log('/send-id')
+    console.log('req.query.registerFrom:', req.query.registerFrom)
+    console.log('process.env.LINE_LOGIN_LIFF_ID:', process.env.LINE_LOGIN_LIFF_ID)
+    console.log('process.env.MESSAGING_API_LIFF_ID:', process.env.MESSAGING_API_LIFF_ID)
     if (req.query.registerFrom == 'lineLogin') {
+      console.log('lineLogin')
       res.json({ id: process.env.LINE_LOGIN_LIFF_ID });
       return;
     }
     if (req.query.registerFrom == 'messagingApi') {
+      console.log('messagingApi')
       res.json({ id: process.env.MESSAGING_API_LIFF_ID });
       return;
     }
+    console.log('error')
     res.json({ id: 'error' });
   });
 
